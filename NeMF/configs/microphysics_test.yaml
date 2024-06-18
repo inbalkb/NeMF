@@ -1,0 +1,28 @@
+hydra:
+  run:
+    dir: /home/inbalkom/NN_outputs/test/${now:%Y-%m-%d}/${now:%H-%M-%S}
+seed: 3
+debug: False
+gpu: 0
+save_results: True
+choose_thr_from_val_set: True
+show: False
+checkpoint_resume_path: "/wdata_visl/inbalkom/NN_outputs/2024-03-10/14-26-30-BOMEX-PYSHDOM-Train0-nocloudbow-const_4NeMF/checkpoints/cp_270000.pth"
+  # "/wdata_visl/inbalkom/NN_outputs/2024-03-03/20-57-21-BOMEX-PYSHDOM-Train0-nocloudbow-varsats-M/checkpoints/cp_290000.pth"
+  # "/wdata_visl/inbalkom/NN_outputs/2024-03-02/01-47-37-CASS-PYSHDOM-Train0-nocloudbow/checkpoints/cp_240000.pth"
+data:
+  dataset_name: "BOMEX_500CCN_10cams_20m_polarization_pyshdom"  
+  # "BOMEX_500CCN_10cams_20m_polarization_pyshdom"  
+  # "BOMEX_polarization_pyshdom_varying_M" 
+  # "CASS_10cams_20m_polarization_pyshdom"
+  data_source: "pyshdom"
+  n_val: -1
+  n_cam: 10
+
+ct_net:
+  test_n_query: 500
+  test_mask_type: 'space_carving' # 'space_carving' 'gt_mask' None
+  query_point_test_method: 'all'
+
+min_mask_points: 30
+
