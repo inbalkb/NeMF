@@ -7,4 +7,11 @@ Inverse problems in scientific imaging often seek physical characterization of h
 ![VIP-CT](readme_files/main_net_figure_train_and_infer2.png)
 
 ## Description
-Soon.
+This repository contains the official implementation of NeMF: Neural Microphysics Fields, accepted for publication in IEEE Transactions on Pattern Analysis and Machine Intelligence, and presented at ICCP 2024.
+Our framework preforms fast scattering tomography of clouds for variable viewing
+geometries and resolutions. The core of NeMF is a decoder, which consists of 3 heads. Each of the heads assigns an estimated value of a cloud's microphysical parameters at a queried location: the cloud's effective radius, effective variance and liquid water content. 
+The decoder's input is a feature vector. It consists of 3 concatenated feature vectors of 3 encoders: The first is a feature vector expressing the 3D geometry of the queried location. 
+The second expresses the geometry of the viewpoint (camera) locations. The third is a vector of image
+features, associated with the queried location.  For more details see our [paper](--) and [supplementary material](--).
+
+![results](readme_files/3d_scatter.png)
