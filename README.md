@@ -47,7 +47,7 @@ The VIP-CT trained models can be found [here]([https://technionmail-my.sharepoin
 &nbsp;
 ### Simulations
 #### Training 
-Set the config file at configs/microphysics_train.yaml according to the desired experiment, e.g. dataset_name: "BOMEX_500CCN_10cams_20m_polarization_pyshdom"/"CASS_10cams_20m_polarization_pyshdom"'CASS_10cams_20m' etc.
+Set the config file at configs/microphysics_train.yaml according to the desired experiment, e.g. dataset_name: "BOMEX_500CCN_10cams_20m_polarization_pyshdom"/"CASS_10cams_20m_polarization_pyshdom" etc.
 Then, run
 
 
