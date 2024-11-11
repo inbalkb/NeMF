@@ -42,7 +42,7 @@ Change the 'data_root' parameter to your current data path in '/NeMF/microphysic
 &nbsp;
 
 ### Trained NeMF models
-The VIP-CT trained models can be found [here](https://technionmail-my.sharepoint.com/personal/hybridlab_technion_ac_il/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fhybridlab%5Ftechnion%5Fac%5Fil%2FDocuments%2FInbal%20ICCP24&ga=1).
+The NeMF trained models can be found [here](https://technionmail-my.sharepoint.com/personal/hybridlab_technion_ac_il/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fhybridlab%5Ftechnion%5Fac%5Fil%2FDocuments%2FInbal%20ICCP24&ga=1).
 
 &nbsp;
 ### Simulations
