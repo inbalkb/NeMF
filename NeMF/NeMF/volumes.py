@@ -213,7 +213,7 @@ class Volumes:
         query_points = self.get_coord_grid()
         ext = self.extinctions.reshape(self.extinctions.shape[0],self.extinctions.shape[1], -1)
         # indices = None
-        indices = [torch.arange(ext.shape[-1], device=self.extinctions.device)]
+        indices = [torch.arange(ext.shape[-1], device=self.extinctions.device) for _ in ext]
 
         if masks is not None:
             ext = [e[:,m.reshape(-1)] if m is not None else e for e, m in zip(ext, masks)]
