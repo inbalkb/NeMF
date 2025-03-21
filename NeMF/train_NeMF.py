@@ -369,7 +369,7 @@ def main(cfg: DictConfig):
                                          camera_center= torch.tensor(camera_center, device=device).float(), device=device)
                     masks = [torch.tensor(mask) if mask is not None else mask for mask in masks]
 
-                    if torch.sum(torch.tensor([(mask).sum() if mask is not None else mask for mask in masks])) == 0:
+                    if (masks[0] is not None) and (torch.sum(torch.tensor([(mask).sum() if mask is not None else mask for mask in masks])) == 0):
                         continue
                     # Activate eval mode of the model (lets us do a full rendering pass).
                     model.eval()

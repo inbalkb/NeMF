@@ -199,8 +199,12 @@ class MicrophysicsCloudDataset(Dataset):
                 mask = data['mask_morph']
         elif self.mask_type == 'gt_mask':
             mask = (gt_grid_data['lwc_gt'] > 0) * (gt_grid_data['reff_gt'] > 0) * (gt_grid_data['veff_gt'] > 0)
-        if mask.dtype != 'bool':
-            mask = mask>0
+        elif self.mask_type == 'gt_mask_mod':
+            mask = gt_grid_data['gtmask_morph']*0.5
+            gt_mask = (gt_grid_data['lwc_gt'] > 0) * (gt_grid_data['reff_gt'] > 0) * (gt_grid_data['veff_gt'] > 0)
+            mask[gt_mask==1]=1
+        # if mask.dtype != 'bool':
+        #     mask = mask>0
 
         cam_i = torch.arange(self.n_cam)
         if 'varying' in self.dataset_name:
@@ -234,7 +238,7 @@ class MicrophysicsCloudDataset(Dataset):
         else:
             image_sizes = [image.shape[1:] for image in images]
 
-        grid = data['grid']
+        grid = gt_grid_data['grid']
 
         if ("varsun" in self.dataset_name):
             env_params = np.array([[data['sun_zenith'].squeeze(), data['sun_azimuth'].squeeze()]] * images.shape[0])
